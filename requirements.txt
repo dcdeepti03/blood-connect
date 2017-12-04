@@ -3,3 +3,18 @@
 
 # application.py: 1
 Flask == 0.12.2
+
+# application.py: 4
+Flask_Session == 0.3.1
+
+# application.py: 10
+cs50 == 2.3.2
+
+# application.py: 2
+google_auth == 1.2.1
+
+# application.py: 3
+google_auth_oauthlib == 0.2.0
+
+# application.py: 8
+requests == 2.18.4
