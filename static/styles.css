@@ -12,7 +12,13 @@
         height: calc(100% - 110px);
         overflow: auto;
     }
-
+    .profile-image {
+      height: 40px;
+      margin-right: 10px;
+    }
+    #profile {
+      padding: 5px 0 0 0;
+    }
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h1>Notify Donors</h1>
+    <form name="notify" action="/notify-donors" method="post">
+        <div class="form-group">
+            <label for="blood-group">Select blood groups</option>
+            <select name="blood-group" name="blood-group" required multiple>
+                <option value="A+">A RhD positive (A+)</option>
+                <option value="A-">A RhD negative (A-)</option>
+                <option value="B+">B RhD positive (B+)</option>
+                <option value="B-">B RhD negative (B-)</option>
+                <option value="O+">O RhD positive (O+)</option>
+                <option value="O-">O RhD negative (O-)</option>
+                <option value="AB+">AB RhD positive (AB+)</option>
+                <option value="AB-">AB RhD negative (AB-)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input name="title" type="text" placeholder="Short Description" required>
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="Message to donors" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Notify Donors</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h1>Register {{session.profile.name}} as a donor</h1>
+    <form name="register" action="/register-donor" method="post">
+        <div class="form-group">
+            <select name="blood-group" required>
+                <option value="">Select a blood group</option>
+                <option value="A+">A RhD positive (A+)</option>
+                <option value="A-">A RhD negative (A-)</option>
+                <option value="B+">B RhD positive (B+)</option>
+                <option value="B-">B RhD negative (B-)</option>
+                <option value="O+">O RhD positive (O+)</option>
+                <option value="O-">O RhD negative (O-)</option>
+                <option value="AB+">AB RhD positive (AB+)</option>
+                <option value="AB-">AB RhD negative (AB-)</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

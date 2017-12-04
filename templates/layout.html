@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- http://getbootstrap.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- App's own CSS -->
+        <link href="/static/styles.css" rel="stylesheet"/>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <!-- http://getbootstrap.com/ -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- app's own JavaScript -->
+        <script src="/static/scripts.js"></script>
+
+        <title>Blood Connect</title>
+
+    </head>
+    <body>
+
+       <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Blood Connect</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                {% if session.profile %}
+                <li><a href="/register-donor">Register Donor</a></li>
+                <li><a href="/notify-donors">Notify Donors</a></li>
+                {% endif %}
+              </ul>
+              {% if not session.profile %}
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/authorize"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+              {% else %}
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown" id="profile">
+                        <img src="{{session.profile.picture}}" class="profile-image img-circle">{{session.profile.name}}<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                               <li><a href="/revoke"><i class="fa fa-sign-out"></i>Delete Account</a></li>
+                              <li><a href="/clear"><i class="fa fa-sign-out"></i> Sign-out</a></li>
+                          </ul>
+                </li>
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+        </nav>
+        {% if get_flashed_messages() %}
+          <header>
+            <div class="alert alert-info border text-center" role="alert">
+              {{ get_flashed_messages() | join(" ") }}
+            </div>
+          </header>
+        {% endif %}
+        <div class="container text-center main">
+          <div class="row content">
+            <div class="col-sm-8 text-left">
+              {% block main %}{% endblock %}
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
