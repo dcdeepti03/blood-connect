@@ -1,4 +1,4 @@
-This application allows users to signs up using their google account and then allows to collaborate and check donation requests.
+This application allows users to sign up using their google account and then allows to collaborate and check donation requests.
 
 # Authorization and authentication
 
@@ -7,11 +7,11 @@ The application makes use of the Google API for authentication and authorization
 This enabled me to have secure login, signup flows without re-engineering the authentication design and have this working with minimum effort
 The API documentation for the use of the API is also extensive and made it easy to implement
 
-# Databse
+# Database
 
 - The application makes use of sqlite3 for database needs.
-- The databse name is bloodconnect.db
-- There are two tables in this databse
+- The database name is bloodconnect.db
+- There are two tables in this database
     - user_profile table stores the profile details for all users that signup with the application
     - donation_requests table stores messages for donors, along with the information on who created the message, blood groups needed for donation and archival flag
 
