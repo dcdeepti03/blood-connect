@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block main %}
     <h1>Welcome</h1>
+    <p>Some heroes don’t wear capes, and they do come in all shapes and sizes. When it comes to life, we all bleed red. The best gift to give someone, is the gift of life and we can do that by donating blood. Giving blood is a simple thing to do, but it can make a big difference in the lives of others. We provide a platform to the interested donors as well as the hospitals to communicate with each other and help those in need.So, join today and find the hero in you. </p>
+    <hr>
     {% for message in messages %}
         <div class="panel panel-default" id="{{message.messageId}}">
             <div class="panel-heading">
