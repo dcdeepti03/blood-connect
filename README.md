@@ -35,4 +35,7 @@ The project contains:
  2. `static` directory stores applications javascript and css file
  2. `tempalates` directory stores the HTML tempalates of the application,
     - layout.html has the layout for all pages of the application. This links to CSS and JS file. The application uses bootstrap and jquery
-   
+
+## Video presentation
+
+[![CS-50-video](https://img.youtube.com/vi/4q3jiy0YMEg/0.jpg)](http://www.youtube.com/watch?v=4q3jiy0YMEg)
