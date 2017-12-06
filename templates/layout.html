@@ -38,10 +38,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li id="home"><a href="/">Home</a></li>
                 {% if session.profile %}
-                <li><a href="/register-donor">Register Donor</a></li>
-                <li><a href="/notify-donors">Notify Donors</a></li>
+                <li id="register"><a href="/register-donor">Register Donor</a></li>
+                <li id="notify"><a href="/notify-donors">Notify Donors</a></li>
                 {% endif %}
               </ul>
               {% if not session.profile %}
